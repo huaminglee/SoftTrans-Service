@@ -44,6 +44,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataFileds.cs" />
+    <Compile Include="HrmCompany.cs" />
+    <Compile Include="HrmDepartment.cs" />
+    <Compile Include="HrmEducationLevel.cs" />
+    <Compile Include="HrmJobActivities.cs" />
+    <Compile Include="HrmJobCall.cs" />
+    <Compile Include="HrmJobGroups.cs" />
+    <Compile Include="HrmJobTitles.cs" />
+    <Compile Include="HrmSpeciality.cs" />
+    <Compile Include="HrmSubCompany.cs" />
+    <Compile Include="HrmUseKind.cs" />
+    <Compile Include="Hrm_City.cs" />
+    <Compile Include="Hrm_Country.cs" />
+    <Compile Include="Hrm_Locations.cs" />
+    <Compile Include="Hrm_Province.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Enum\TableNames.cs" />
     <Compile Include="T_baseBalanceExchange_Rate.cs" />
