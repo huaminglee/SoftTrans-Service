@@ -297,7 +297,9 @@
     <None Include="Service References\BaseFileService\configuration91.svcinfo" />
     <None Include="Service References\BaseFileService\BaseFileService.disco" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="BaseFile\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
