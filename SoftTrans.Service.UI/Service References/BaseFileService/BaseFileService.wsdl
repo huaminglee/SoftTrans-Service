@@ -38,6 +38,36 @@
   <wsdl:message name="IBaseFileService_LoadPage_T_baseBalanceExchange_Rate_OutputMessage">
     <wsdl:part name="parameters" element="tns:LoadPage_T_baseBalanceExchange_RateResponse" />
   </wsdl:message>
+  <wsdl:message name="IBaseFileService_Insert_Hrm_Country_InputMessage">
+    <wsdl:part name="parameters" element="tns:Insert_Hrm_Country" />
+  </wsdl:message>
+  <wsdl:message name="IBaseFileService_Insert_Hrm_Country_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Insert_Hrm_CountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBaseFileService_Update_Hrm_Country_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update_Hrm_Country" />
+  </wsdl:message>
+  <wsdl:message name="IBaseFileService_Update_Hrm_Country_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Update_Hrm_CountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBaseFileService_Delete_Hrm_Country_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_Hrm_Country" />
+  </wsdl:message>
+  <wsdl:message name="IBaseFileService_Delete_Hrm_Country_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_Hrm_CountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBaseFileService_Load_Hrm_Country_InputMessage">
+    <wsdl:part name="parameters" element="tns:Load_Hrm_Country" />
+  </wsdl:message>
+  <wsdl:message name="IBaseFileService_Load_Hrm_Country_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Load_Hrm_CountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBaseFileService_LoadPage_Hrm_Country_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadPage_Hrm_Country" />
+  </wsdl:message>
+  <wsdl:message name="IBaseFileService_LoadPage_Hrm_Country_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadPage_Hrm_CountryResponse" />
+  </wsdl:message>
   <wsdl:portType name="IBaseFileService">
     <wsdl:operation name="Insert_T_baseBalanceExchange_Rate">
       <wsdl:input wsaw:Action="http://tempuri.org/IBaseFileService/Insert_T_baseBalanceExchange_Rate" message="tns:IBaseFileService_Insert_T_baseBalanceExchange_Rate_InputMessage" />
@@ -58,6 +88,26 @@
     <wsdl:operation name="LoadPage_T_baseBalanceExchange_Rate">
       <wsdl:input wsaw:Action="http://tempuri.org/IBaseFileService/LoadPage_T_baseBalanceExchange_Rate" message="tns:IBaseFileService_LoadPage_T_baseBalanceExchange_Rate_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBaseFileService/LoadPage_T_baseBalanceExchange_RateResponse" message="tns:IBaseFileService_LoadPage_T_baseBalanceExchange_Rate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert_Hrm_Country">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBaseFileService/Insert_Hrm_Country" message="tns:IBaseFileService_Insert_Hrm_Country_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBaseFileService/Insert_Hrm_CountryResponse" message="tns:IBaseFileService_Insert_Hrm_Country_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_Hrm_Country">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBaseFileService/Update_Hrm_Country" message="tns:IBaseFileService_Update_Hrm_Country_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBaseFileService/Update_Hrm_CountryResponse" message="tns:IBaseFileService_Update_Hrm_Country_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Hrm_Country">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBaseFileService/Delete_Hrm_Country" message="tns:IBaseFileService_Delete_Hrm_Country_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBaseFileService/Delete_Hrm_CountryResponse" message="tns:IBaseFileService_Delete_Hrm_Country_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Load_Hrm_Country">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBaseFileService/Load_Hrm_Country" message="tns:IBaseFileService_Load_Hrm_Country_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBaseFileService/Load_Hrm_CountryResponse" message="tns:IBaseFileService_Load_Hrm_Country_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadPage_Hrm_Country">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBaseFileService/LoadPage_Hrm_Country" message="tns:IBaseFileService_LoadPage_Hrm_Country_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBaseFileService/LoadPage_Hrm_CountryResponse" message="tns:IBaseFileService_LoadPage_Hrm_Country_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IBaseFileService" type="tns:IBaseFileService">
@@ -100,6 +150,51 @@
     </wsdl:operation>
     <wsdl:operation name="LoadPage_T_baseBalanceExchange_Rate">
       <soap:operation soapAction="http://tempuri.org/IBaseFileService/LoadPage_T_baseBalanceExchange_Rate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_Hrm_Country">
+      <soap:operation soapAction="http://tempuri.org/IBaseFileService/Insert_Hrm_Country" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Hrm_Country">
+      <soap:operation soapAction="http://tempuri.org/IBaseFileService/Update_Hrm_Country" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Hrm_Country">
+      <soap:operation soapAction="http://tempuri.org/IBaseFileService/Delete_Hrm_Country" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Load_Hrm_Country">
+      <soap:operation soapAction="http://tempuri.org/IBaseFileService/Load_Hrm_Country" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadPage_Hrm_Country">
+      <soap:operation soapAction="http://tempuri.org/IBaseFileService/LoadPage_Hrm_Country" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

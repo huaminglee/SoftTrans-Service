@@ -6,9 +6,7 @@ namespace SoftTrans.Service.Entity.Enum
         T_OperationLog,
         T_baseBalanceExchange_Rate,
         T_baseBalance_CurrencyType,
-        T_SystemMenus,
         ErrorLogs,
-        T_OperationLog,
 
         HrmUseKind,
         HrmSubCompany,

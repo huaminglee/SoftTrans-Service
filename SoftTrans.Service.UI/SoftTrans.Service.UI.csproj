@@ -73,7 +73,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlertMessage.cs" />
+    <Compile Include="Frm_HrmCountry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_HrmCountry.Designer.cs">
+      <DependentUpon>Frm_HrmCountry.cs</DependentUpon>
+    </Compile>
     <Compile Include="Init\AssemblyManager.cs" />
+    <Compile Include="Loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Loading.Designer.cs">
+      <DependentUpon>Loading.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proxy\BaseFileProxy.cs" />
     <Compile Include="Proxy\CommonProxy.cs" />
     <Compile Include="Init\Settings.cs">
@@ -150,6 +162,9 @@
     <Compile Include="SetDispalyColumns.Designer.cs">
       <DependentUpon>SetDispalyColumns.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Frm_HrmCountry.resx">
+      <DependentUpon>Frm_HrmCountry.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Init\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,6 +189,9 @@
     <EmbeddedResource Include="Init\InitSplash.resx">
       <DependentUpon>InitSplash.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Loading.resx">
+      <DependentUpon>Loading.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -189,6 +207,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\SoftTrans.Service.Entity.Hrm_Country.datasource" />
     <None Include="Properties\DataSources\SoftTrans.Service.Entity.T_baseBalanceExchange_Rate.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

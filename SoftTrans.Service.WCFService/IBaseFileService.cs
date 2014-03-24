@@ -26,5 +26,19 @@ namespace SoftTrans.Service.WCFService
 
         [OperationContract(Name = "LoadPage_T_baseBalanceExchange_Rate")]
         string LoadPageEntities(int pageIndex, int pageSize, object where, out int rowCount, params object[] aopPara);
+
+
+        [OperationContract(Name = "Insert_Hrm_Country")]
+        Hrm_Country Insert_Hrm_Country(Hrm_Country entity);
+        [OperationContract(Name = "Update_Hrm_Country")]
+        bool Update_Hrm_Country(Hrm_Country entity);
+        [OperationContract(Name = "Delete_Hrm_Country")]
+        bool Delete_Hrm_Country(object keyId);
+        [OperationContract(Name = "Load_Hrm_Country")]
+        string Load_Hrm_Country(object where);
+        [OperationContract(Name = "LoadPage_Hrm_Country")]
+        string LoadPage_Hrm_Country(int pageIndex, int pageSize, object where, out int rowCount, params object[] aopPara);
+
+
     }
 }

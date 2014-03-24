@@ -29,16 +29,18 @@ namespace SoftTrans.Service.UI
             DevExpress.UserSkins.BonusSkins.Register();
             UserLookAndFeel.Default.SetSkinStyle("Office 2013");
 
+            Application.Run(new Frm_HrmCountry()); 
+
 
             //显示登陆窗体
-            FrmLogin loginView = new FrmLogin();
-            loginView.ShowDialog();
+            //FrmLogin loginView = new FrmLogin();
+            //loginView.ShowDialog();
 
 
-            if (loginView.DialogResult == DialogResult.OK)
-            {
-                InitProgram.IninSystem();
-            }
+            //if (loginView.DialogResult == DialogResult.OK)
+            //{
+            //    InitProgram.IninSystem();
+            //}
         }
 
 

@@ -12,5 +12,10 @@ namespace SoftTrans.Service.DAL
         {
             get { return new ExchangeRateRepository(); }
         }
+
+        public static ICountryRepository CountryRepository
+        {
+            get { return new CountryRepository(); }
+        }
     }
 }

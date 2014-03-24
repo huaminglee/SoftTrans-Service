@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraWaitForm;
 
-namespace SoftTrans.Service.Common.UI
+namespace SoftTrans.Service.UI
 {
     public partial class Loading : WaitForm
     {
@@ -34,7 +34,6 @@ namespace SoftTrans.Service.Common.UI
             base.ProcessCommand(cmd, arg);
 
             WaitFormCommand command = (WaitFormCommand)cmd;
-
             switch (command)
             {
                 case WaitFormCommand.SAVE:

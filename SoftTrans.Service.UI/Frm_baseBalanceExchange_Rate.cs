@@ -5,18 +5,11 @@ using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using DevExpress.XtraSplashScreen;
-using SoftTrans.Service.Common;
 using SoftTrans.Service.Common.UI;
-using SoftTrans.Service.Entity;
 using SoftTrans.Service.Entity.Enum;
-using SoftTrans.Service.UI.CommonService;
 using SoftTrans.Service.UI.Proxy;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.ServiceModel;
 using System.Text;
 using System.Windows.Forms;
 
@@ -51,8 +44,7 @@ namespace SoftTrans.Service.UI
         private void bgSelectRate_DoWork(object sender, DoWorkEventArgs e)
         {
 
-
-            SplashScreenManager.ShowForm(typeof(Loading));
+            SplashScreenManager.ShowForm(this, typeof(Loading), true, true);
             SplashScreenManager.Default.SendCommand(Loading.WaitFormCommand.SELECT, null);
 
             int rowCount;

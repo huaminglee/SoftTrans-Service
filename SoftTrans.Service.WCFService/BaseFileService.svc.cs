@@ -13,33 +13,65 @@ namespace SoftTrans.Service.WCFService
     // 注意: 为了启动 WCF 测试客户端以测试此服务，请在解决方案资源管理器中选择 BaseFileService.svc 或 BaseFileService.svc.cs，然后开始调试。
     public class BaseFileService : IBaseFileService
     {
-        private IExchangeRateRepository db = RepositoryFactory.ExchangeRateRepository;
 
+
+        #region 汇率档案
         public Entity.T_baseBalanceExchange_Rate Insert(Entity.T_baseBalanceExchange_Rate entity)
         {
-            return db.Insert(entity);
+            return RepositoryFactory.ExchangeRateRepository.Insert(entity);
         }
 
         public bool Update(Entity.T_baseBalanceExchange_Rate entity)
         {
-            return db.Update(entity);
+            return RepositoryFactory.ExchangeRateRepository.Update(entity);
         }
 
         public bool Delete(object keyId)
         {
-            return db.Delete(keyId);
+            return RepositoryFactory.ExchangeRateRepository.Delete(keyId);
         }
 
         public string LoadEntities(object where)
         {
-            var obj = db.LoadEntities(where);
+            var obj = RepositoryFactory.ExchangeRateRepository.LoadEntities(where);
             return Newtonsoft.Json.JsonConvert.SerializeObject(obj);
         }
 
         public string LoadPageEntities(int pageIndex, int pageSize, object where, out int rowCount, params object[] aopPara)
         {
-            var obj = db.LoadPageEntities(pageIndex, pageSize, where, out rowCount, aopPara);
+            var obj = RepositoryFactory.ExchangeRateRepository.LoadPageEntities(pageIndex, pageSize, where, out rowCount, aopPara);
             return Newtonsoft.Json.JsonConvert.SerializeObject(obj);
         }
+        #endregion
+
+
+        #region 国家设置
+        public Entity.Hrm_Country Insert_Hrm_Country(Entity.Hrm_Country entity)
+        {
+            return RepositoryFactory.CountryRepository.Insert(entity);
+        }
+
+        public bool Update_Hrm_Country(Entity.Hrm_Country entity)
+        {
+            return RepositoryFactory.CountryRepository.Update(entity);
+        }
+
+        public bool Delete_Hrm_Country(object keyId)
+        {
+            return RepositoryFactory.CountryRepository.Delete(keyId);
+        }
+
+        public string Load_Hrm_Country(object where)
+        {
+            var obj = RepositoryFactory.CountryRepository.LoadEntities(where);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(obj);
+        }
+
+        public string LoadPage_Hrm_Country(int pageIndex, int pageSize, object where, out int rowCount, params object[] aopPara)
+        {
+            var obj = RepositoryFactory.CountryRepository.LoadPageEntities(pageIndex, pageSize, where, out rowCount, aopPara);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(obj);
+        }
+        #endregion
     }
 }

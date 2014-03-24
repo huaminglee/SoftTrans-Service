@@ -14,4 +14,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="T_baseBalanceExchange_Rate" nillable="true" type="tns:T_baseBalanceExchange_Rate" />
+  <xs:complexType name="Hrm_Country">
+    <xs:sequence>
+      <xs:element name="_x003C_CountryDesc_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_CountryName_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_ID_x003E_k__BackingField" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Hrm_Country" nillable="true" type="tns:Hrm_Country" />
 </xs:schema>

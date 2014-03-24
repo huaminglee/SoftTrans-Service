@@ -24,17 +24,44 @@ namespace SoftTrans.Service.UI.BaseFileService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBaseFileService/Delete_T_baseBalanceExchange_Rate", ReplyAction="http://tempuri.org/IBaseFileService/Delete_T_baseBalanceExchange_RateResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SoftTrans.Service.Entity.T_baseBalanceExchange_Rate))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SoftTrans.Service.Entity.Hrm_Country))]
         bool Delete_T_baseBalanceExchange_Rate(object keyId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBaseFileService/Load_T_baseBalanceExchange_Rate", ReplyAction="http://tempuri.org/IBaseFileService/Load_T_baseBalanceExchange_RateResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SoftTrans.Service.Entity.T_baseBalanceExchange_Rate))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SoftTrans.Service.Entity.Hrm_Country))]
         string Load_T_baseBalanceExchange_Rate(object where);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBaseFileService/LoadPage_T_baseBalanceExchange_Rate", ReplyAction="http://tempuri.org/IBaseFileService/LoadPage_T_baseBalanceExchange_RateResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SoftTrans.Service.Entity.T_baseBalanceExchange_Rate))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SoftTrans.Service.Entity.Hrm_Country))]
         string LoadPage_T_baseBalanceExchange_Rate(out int rowCount, int pageIndex, int pageSize, object where, object[] aopPara);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBaseFileService/Insert_Hrm_Country", ReplyAction="http://tempuri.org/IBaseFileService/Insert_Hrm_CountryResponse")]
+        SoftTrans.Service.Entity.Hrm_Country Insert_Hrm_Country(SoftTrans.Service.Entity.Hrm_Country entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBaseFileService/Update_Hrm_Country", ReplyAction="http://tempuri.org/IBaseFileService/Update_Hrm_CountryResponse")]
+        bool Update_Hrm_Country(SoftTrans.Service.Entity.Hrm_Country entity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBaseFileService/Delete_Hrm_Country", ReplyAction="http://tempuri.org/IBaseFileService/Delete_Hrm_CountryResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SoftTrans.Service.Entity.T_baseBalanceExchange_Rate))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SoftTrans.Service.Entity.Hrm_Country))]
+        bool Delete_Hrm_Country(object keyId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBaseFileService/Load_Hrm_Country", ReplyAction="http://tempuri.org/IBaseFileService/Load_Hrm_CountryResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SoftTrans.Service.Entity.T_baseBalanceExchange_Rate))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SoftTrans.Service.Entity.Hrm_Country))]
+        string Load_Hrm_Country(object where);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBaseFileService/LoadPage_Hrm_Country", ReplyAction="http://tempuri.org/IBaseFileService/LoadPage_Hrm_CountryResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SoftTrans.Service.Entity.T_baseBalanceExchange_Rate))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SoftTrans.Service.Entity.Hrm_Country))]
+        string LoadPage_Hrm_Country(out int rowCount, int pageIndex, int pageSize, object where, object[] aopPara);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -82,6 +109,26 @@ namespace SoftTrans.Service.UI.BaseFileService {
         
         public string LoadPage_T_baseBalanceExchange_Rate(out int rowCount, int pageIndex, int pageSize, object where, object[] aopPara) {
             return base.Channel.LoadPage_T_baseBalanceExchange_Rate(out rowCount, pageIndex, pageSize, where, aopPara);
+        }
+        
+        public SoftTrans.Service.Entity.Hrm_Country Insert_Hrm_Country(SoftTrans.Service.Entity.Hrm_Country entity) {
+            return base.Channel.Insert_Hrm_Country(entity);
+        }
+        
+        public bool Update_Hrm_Country(SoftTrans.Service.Entity.Hrm_Country entity) {
+            return base.Channel.Update_Hrm_Country(entity);
+        }
+        
+        public bool Delete_Hrm_Country(object keyId) {
+            return base.Channel.Delete_Hrm_Country(keyId);
+        }
+        
+        public string Load_Hrm_Country(object where) {
+            return base.Channel.Load_Hrm_Country(where);
+        }
+        
+        public string LoadPage_Hrm_Country(out int rowCount, int pageIndex, int pageSize, object where, object[] aopPara) {
+            return base.Channel.LoadPage_Hrm_Country(out rowCount, pageIndex, pageSize, where, aopPara);
         }
     }
 }

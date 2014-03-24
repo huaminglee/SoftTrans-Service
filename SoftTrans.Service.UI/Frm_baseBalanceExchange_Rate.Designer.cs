@@ -81,12 +81,12 @@
             this.pagerRate.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pagerRate.Font = new System.Drawing.Font("Tahoma", 9F);
             this.pagerRate.JumpText = "跳转";
-            this.pagerRate.Location = new System.Drawing.Point(0, 336);
+            this.pagerRate.Location = new System.Drawing.Point(0, 512);
             this.pagerRate.Name = "pagerRate";
             this.pagerRate.PageIndex = 1;
             this.pagerRate.PageSize = 50;
             this.pagerRate.RecordCount = 0;
-            this.pagerRate.Size = new System.Drawing.Size(1014, 32);
+            this.pagerRate.Size = new System.Drawing.Size(1238, 32);
             this.pagerRate.TabIndex = 0;
             this.pagerRate.OnPageChanged += new System.EventHandler(this.pagerRate_OnPageChanged);
             // 
@@ -98,7 +98,7 @@
             this.gridRate.Location = new System.Drawing.Point(2, 22);
             this.gridRate.MainView = this.gvRate;
             this.gridRate.Name = "gridRate";
-            this.gridRate.Size = new System.Drawing.Size(1010, 252);
+            this.gridRate.Size = new System.Drawing.Size(1234, 428);
             this.gridRate.TabIndex = 1;
             this.gridRate.ToolTipController = this.tipRowInfo;
             this.gridRate.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -271,7 +271,7 @@
             this.grpList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpList.Location = new System.Drawing.Point(0, 60);
             this.grpList.Name = "grpList";
-            this.grpList.Size = new System.Drawing.Size(1014, 276);
+            this.grpList.Size = new System.Drawing.Size(1238, 452);
             this.grpList.TabIndex = 2;
             this.grpList.Text = "列表明细";
             // 
@@ -281,7 +281,7 @@
             this.grpCondition.Dock = System.Windows.Forms.DockStyle.Top;
             this.grpCondition.Location = new System.Drawing.Point(0, 0);
             this.grpCondition.Name = "grpCondition";
-            this.grpCondition.Size = new System.Drawing.Size(1014, 60);
+            this.grpCondition.Size = new System.Drawing.Size(1238, 60);
             this.grpCondition.TabIndex = 3;
             this.grpCondition.Text = "筛选条件";
             // 
@@ -312,7 +312,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1010, 36);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1234, 36);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label2
@@ -384,7 +384,7 @@
             // Frm_baseBalanceExchange_Rate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
-            this.ClientSize = new System.Drawing.Size(1014, 368);
+            this.ClientSize = new System.Drawing.Size(1238, 544);
             this.Controls.Add(this.grpList);
             this.Controls.Add(this.pagerRate);
             this.Controls.Add(this.grpCondition);

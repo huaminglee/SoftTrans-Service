@@ -18,6 +18,9 @@ namespace SoftTrans.Service.UI.Proxy
 
 
 
+
+
+        #region 汇率档案
         public Entity.T_baseBalanceExchange_Rate Insert(Entity.T_baseBalanceExchange_Rate entity)
         {
             return Channel.Insert_T_baseBalanceExchange_Rate(entity);
@@ -44,5 +47,35 @@ namespace SoftTrans.Service.UI.Proxy
             var obj = Channel.LoadPage_T_baseBalanceExchange_Rate(out rowCount, pageIndex, pageSize, where, aopPara);
             return Newtonsoft.Json.JsonConvert.DeserializeObject<List<Entity.T_baseBalanceExchange_Rate>>(obj);
         }
+        #endregion
+
+        #region 国家设置
+        public Entity.Hrm_Country Insert_Hrm_Country(Entity.Hrm_Country entity)
+        {
+            return Channel.Insert_Hrm_Country(entity);
+        }
+
+        public bool Update_Hrm_Country(Entity.Hrm_Country entity)
+        {
+            return Channel.Update_Hrm_Country(entity);
+        }
+
+        public bool Delete_Hrm_Country(object keyId)
+        {
+            return Channel.Delete_Hrm_Country(keyId);
+        }
+
+        public List<Entity.Hrm_Country> Load_Hrm_Country(object where)
+        {
+            var obj = Channel.Load_Hrm_Country(where);
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<Entity.Hrm_Country>>(obj);
+        }
+
+        public List<Entity.Hrm_Country> LoadPage_Hrm_Country(out int rowCount, int pageIndex, int pageSize, object where, params object[] aopPara)
+        {
+            var obj = Channel.LoadPage_Hrm_Country(out rowCount, pageIndex, pageSize, where, aopPara);
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<Entity.Hrm_Country>>(obj);
+        }
+        #endregion
     }
 }
