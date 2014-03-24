@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="SoftTrans.Service.WCFService.CommonService" CodeBehind="CommonService.svc.cs" %>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8deddf6d-4199-4dc7-a4de-af9fe3ac6649" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:2956/BaseFileService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="BaseFileService.disco" MetadataType="Disco" ID="cf9fdeac-50e0-45d9-9609-9b6b4d18eeec" SourceId="1" SourceUrl="http://localhost:2956/BaseFileService.svc?disco" />
+    <MetadataFile FileName="BaseFileService.wsdl" MetadataType="Wsdl" ID="105ce121-84cc-4b89-8c28-31cd0e8a4800" SourceId="1" SourceUrl="http://localhost:2956/BaseFileService.svc?wsdl" />
+    <MetadataFile FileName="BaseFileService.xsd" MetadataType="Schema" ID="e7322374-66ba-4d7b-902d-cc6c94620cc7" SourceId="1" SourceUrl="http://localhost:2956/BaseFileService.svc?xsd=xsd3" />
+    <MetadataFile FileName="BaseFileService1.xsd" MetadataType="Schema" ID="1f7bb433-5e81-42e3-b661-bdf3ec889ede" SourceId="1" SourceUrl="http://localhost:2956/BaseFileService.svc?xsd=xsd2" />
+    <MetadataFile FileName="BaseFileService2.xsd" MetadataType="Schema" ID="51e659cc-eceb-4a57-b462-c286dd41bd47" SourceId="1" SourceUrl="http://localhost:2956/BaseFileService.svc?xsd=xsd1" />
+    <MetadataFile FileName="BaseFileService3.xsd" MetadataType="Schema" ID="f89a3cbc-a1a2-4974-8b38-73528e97a43e" SourceId="1" SourceUrl="http://localhost:2956/BaseFileService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
