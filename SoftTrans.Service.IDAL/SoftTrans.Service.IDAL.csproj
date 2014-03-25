@@ -42,6 +42,7 @@
     <Compile Include="IBaseRepository.cs" />
     <Compile Include="ICountryRepository.cs" />
     <Compile Include="IExchangeRateRepository.cs" />
+    <Compile Include="IProvinceRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

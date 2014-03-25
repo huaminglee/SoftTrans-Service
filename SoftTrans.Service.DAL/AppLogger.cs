@@ -10,7 +10,7 @@ using SoftTrans.Service.Entity.Enum;
 
 namespace SoftTrans.Service.DAL
 {
-    public class MyAop : CYQ.Data.Aop.IAop
+    public class AppLogger : CYQ.Data.Aop.IAop
     {
         public CYQ.Data.Aop.AopResult Begin(CYQ.Data.Aop.AopEnum action, CYQ.Data.Aop.AopInfo aopInfo)
         {

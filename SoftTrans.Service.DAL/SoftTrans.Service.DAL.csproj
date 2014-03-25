@@ -31,11 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CYQ.Data">
-      <HintPath>..\..\..\..\..\Downloads\CYQData_V5 (2)\CYQ.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="SoftTrans.Service.Entity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\SoftTrans.Service.Entity\bin\Debug\SoftTrans.Service.Entity.dll</HintPath>
+      <HintPath>..\SoftTrans.Service.UI\Lib\CYQ.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -50,11 +46,16 @@
     <Compile Include="BaseRepository.cs" />
     <Compile Include="CountryRepository.cs" />
     <Compile Include="ExchangeRateRepository.cs" />
-    <Compile Include="MyAop.cs" />
+    <Compile Include="AppLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProvinceRepository.cs" />
     <Compile Include="RepositoryFactory.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SoftTrans.Service.Entity\SoftTrans.Service.Entity.csproj">
+      <Project>{4a03e199-2849-4168-b93e-e2523c0bea72}</Project>
+      <Name>SoftTrans.Service.Entity</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SoftTrans.Service.IDAL\SoftTrans.Service.IDAL.csproj">
       <Project>{8db9904b-a90b-4b8f-bc9f-858655bc1f73}</Project>
       <Name>SoftTrans.Service.IDAL</Name>

@@ -81,7 +81,6 @@
     </Compile>
     <Compile Include="IBaseFileService.cs" />
     <Compile Include="ICommonService.cs" />
-    <Compile Include="MyAop.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
