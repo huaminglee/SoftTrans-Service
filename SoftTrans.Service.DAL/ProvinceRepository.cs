@@ -10,7 +10,7 @@ namespace SoftTrans.Service.DAL
 {
     public class ProvinceRepository : BaseRepository<Hrm_Province>, IProvinceRepository
     {
-        private ProvinceRepository()
+        public ProvinceRepository()
         {
             this.TableName = TableNames.Hrm_Province;
         }

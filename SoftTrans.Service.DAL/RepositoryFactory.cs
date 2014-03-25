@@ -8,6 +8,7 @@ namespace SoftTrans.Service.DAL
 {
     public class RepositoryFactory
     {
+        #region 基础档案
         public static IExchangeRateRepository ExchangeRateRepository
         {
             get { return new ExchangeRateRepository(); }
@@ -17,5 +18,11 @@ namespace SoftTrans.Service.DAL
         {
             get { return new CountryRepository(); }
         }
+
+        public static IProvinceRepository ProvinceRepository
+        {
+            get { return new ProvinceRepository(); }
+        }
+        #endregion
     }
 }

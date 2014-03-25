@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBase));
-            this.imgToolBar = new System.Windows.Forms.ImageList();
+            this.imgToolBar = new System.Windows.Forms.ImageList(this.components);
             this.SuspendLayout();
             // 
             // imgToolBar
@@ -102,6 +103,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ImageList imgToolBar;
+        protected System.Windows.Forms.ImageList imgToolBar;
+
     }
 }

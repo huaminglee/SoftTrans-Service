@@ -185,6 +185,14 @@
             <param name="rowOp">仅Insert和Update选项可用</param>
             <returns></returns>
         </member>
+        <member name="M:CYQ.Data.Table.MDataTable.GetColumnItems``1(System.String)">
+            <summary>
+            返回某列的集合
+            </summary>
+            <typeparam name="T">列的类型</typeparam>
+            <param name="columnName">列名</param>
+            <returns></returns>
+        </member>
         <member name="M:CYQ.Data.Table.MDataTable.Clone">
             <summary>
             复制表
@@ -261,19 +269,84 @@
             多语言操作类
             </summary>
         </member>
+        <member name="M:CYQ.Data.Xml.MutilLanguage.#ctor(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            实例化
+            </summary>
+            <param name="filePath">xml文件路径</param>
+            <param name="forHtml">是否Html文件</param>
+            <param name="getValueByCookie">是获从Cookie初始化默认语言</param>
+        </member>
+        <member name="M:CYQ.Data.Xml.MutilLanguage.#ctor(System.String,System.Boolean)">
+            <summary>
+            实例化
+            </summary>
+            <param name="filePath">xml文件路径</param>
+            <param name="forHtml">是否Html文件</param>
+        </member>
+        <member name="M:CYQ.Data.Xml.MutilLanguage.#ctor(System.String)">
+            <summary>
+            实例化
+            </summary>
+            <param name="filePath">xml文件路径</param>
+        </member>
+        <member name="M:CYQ.Data.Xml.MutilLanguage.Get(System.Object)">
+            <summary>
+            获取多语言节点值
+            </summary>
+            <param name="lanID">Xml节点ID</param>
+        </member>
+        <member name="M:CYQ.Data.Xml.MutilLanguage.Get(System.Object,System.Int32)">
+            <summary>
+            获取多语言节点值
+            </summary>
+            <param name="lanID">Xml节点ID</param>
+            <param name="lanKeyID">LanguageKey对应的数字</param>
+        </member>
+        <member name="M:CYQ.Data.Xml.MutilLanguage.Get(System.Object,CYQ.Data.Xml.LanguageKey)">
+            <summary>
+            获取多语言节点值
+            </summary>
+            <param name="lanID">Xml节点ID</param>
+            <param name="lanEnum">获取的语言</param>
+            <returns></returns>
+        </member>
+        <member name="M:CYQ.Data.Xml.MutilLanguage.SetToCookie(CYQ.Data.Xml.LanguageKey)">
+            <summary>
+            设置语言类型到Cookie中
+            </summary>
+        </member>
+        <member name="M:CYQ.Data.Xml.MutilLanguage.SetToCookie(System.String)">
+            <summary>
+            设置语言类型到Cookie中
+            </summary>
+        </member>
+        <member name="M:CYQ.Data.Xml.MutilLanguage.GetKey(System.Int32)">
+            <summary>
+            获取LanguageKey数字对应的枚举名称
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CYQ.Data.Xml.MutilLanguage.GetValue(System.String)">
+            <summary>
+            获取LanguageKey枚举对应的数字
+            </summary>
+            <param name="langKey">LanguageKey枚举名称</param>
+            <returns></returns>
+        </member>
         <member name="P:CYQ.Data.Xml.MutilLanguage.FilePath">
             <summary>
-            加载的Xml语言文件的完整（路径）名称
+            获取加载的Xml语言文件的完整（路径）名称
             </summary>
         </member>
         <member name="P:CYQ.Data.Xml.MutilLanguage.LanKey">
             <summary>
-            当前语言类型（如果有设置语言Cookie，则初始化时从Cookie恢复）
+            获取或设置当前语言类型（如果有设置语言Cookie，则初始化时从Cookie恢复）
             </summary>
         </member>
         <member name="P:CYQ.Data.Xml.MutilLanguage.DefaultLanKey">
             <summary>
-            系统默认的语言（取值顺序：AppConfig.XHtml.SysLangKey - > 浏览器语言 -》 默认中文）
+            获取系统默认的语言（取值顺序：AppConfig.XHtml.SysLangKey - > 浏览器语言 -》 默认中文）
             </summary>
         </member>
         <member name="T:CYQ.Data.Xml.LanguageKey">
@@ -389,11 +462,38 @@
         <member name="P:CYQ.Data.DAL.DbBase.OutPutValue">
             <summary>
             存储过程OutPut输出参数值。
+            如果只有一个输出，则为值；
+            如果有多个输出，则为Dictionary。
+            </summary>
+        </member>
+        <member name="T:CYQ.Data.Orm.FieldSource">
+            <summary>
+            字段来源
+            </summary>
+        </member>
+        <member name="F:CYQ.Data.Orm.FieldSource.Property">
+            <summary>
+            从实体属性来
+            </summary>
+        </member>
+        <member name="F:CYQ.Data.Orm.FieldSource.Data">
+            <summary>
+            从数据库或文本数据来
+            </summary>
+        </member>
+        <member name="F:CYQ.Data.Orm.FieldSource.BothOfAll">
+            <summary>
+            综合以上两者
             </summary>
         </member>
         <member name="T:CYQ.Data.Orm.OrmBase">
             <summary>
             ORM扩展基类
+            </summary>
+        </member>
+        <member name="F:CYQ.Data.Orm.OrmBase.fieldSource">
+            <summary>
+             字段来源（当字段变更时，可以设置此属性来切换更新）
             </summary>
         </member>
         <member name="M:CYQ.Data.Orm.OrmBase.#ctor">
@@ -550,6 +650,11 @@
             <param name="where">对表的数据进行过滤如:"ID>15 and Url='cyqdata.com'"</param>
             <param name="text">绑定时显示的字段名[默认字段名取自控件的ID(去掉前三个字母前缀)]</param>
             <param name="value">绑定时显示字段对应的值[默认值的字段名为:ID]</param>
+        </member>
+        <member name="M:CYQ.Data.Orm.OrmBase.Dispose">
+            <summary>
+            释放资源
+            </summary>
         </member>
         <member name="M:CYQ.Data.Orm.OrmBase.GetFrom(System.Object)">
             <summary>
@@ -982,6 +1087,18 @@
             当前请求是否用户的语言
             </summary>
         </member>
+        <member name="T:CYQ.Data.Tool.StaticTool">
+            <summary>
+            静态方法工具类
+            </summary>
+        </member>
+        <member name="M:CYQ.Data.Tool.StaticTool.GetPropertyInfo(System.Type)">
+            <summary>
+            获取属性列表
+            </summary>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
         <member name="T:CYQ.Data.Tool.JsonHelper">
             <summary>
             json 帮助类，功能强大
@@ -1192,12 +1309,11 @@
             </summary>
             <typeparam name="T">实体名称</typeparam>
         </member>
-        <member name="M:CYQ.Data.Table.MDataRow.SetToEntity(System.Object,System.Boolean)">
+        <member name="M:CYQ.Data.Table.MDataRow.SetToEntity(System.Object)">
             <summary>
             将行中的数据值赋给实体对象
             </summary>
             <param name="obj">实体对象</param>
-            <param name="allowInherit">是否允许继承成员</param>
         </member>
         <member name="M:CYQ.Data.Table.MDataRow.SetFromEntity(System.Object)">
             <summary>
@@ -1313,17 +1429,26 @@
         </member>
         <member name="F:CYQ.Data.Table.AcceptOp.Insert">
             <summary>
-            插入（由系统产生自增加ID）
+            批量插入（由系统产生自增加ID）
+            该执行会开启事务。
             </summary>
         </member>
         <member name="F:CYQ.Data.Table.AcceptOp.InsertWithID">
             <summary>
-            插入（由用户指定ID插入）
+            批量插入（由用户指定ID插入）
+            该执行会开启事务。
             </summary>
         </member>
         <member name="F:CYQ.Data.Table.AcceptOp.Update">
             <summary>
-            更新
+            批量更新
+            该执行会开启事务。
+            </summary>
+        </member>
+        <member name="F:CYQ.Data.Table.AcceptOp.Auto">
+            <summary>
+            批量自动插入或更新（检测主键数据若存在，则更新；不存在，则插入）
+            该执行不会开启事务。
             </summary>
         </member>
         <member name="T:CYQ.Data.SQL.SqlPager">
@@ -1421,6 +1546,23 @@
             <param name="where">条件</param>
             <returns></returns>
         </member>
+        <member name="T:CYQ.Data.Extension.RegisterUI">
+            <summary>
+            第三方控件UI注册
+            </summary>
+        </member>
+        <member name="M:CYQ.Data.Extension.RegisterUI.Add(System.String,System.String)">
+            <summary>
+            添加要注册的第三方控件名称。
+            </summary>
+            <param name="controlName">控件类名，如：TextBox</param>
+            <param name="propertyName">控件的自动取值或赋值属性名称，如：Text</param>
+        </member>
+        <member name="M:CYQ.Data.Extension.RegisterUI.Clear">
+            <summary>
+            清除UI注册
+            </summary>
+        </member>
         <member name="M:CYQ.Data.MActionUI.Set(System.Object,System.String,System.Int32,System.Object)">
             <summary>
             MDataRow值-》赋给控件。
@@ -1431,10 +1573,16 @@
             从控件里取值-》MDataRow
             </summary>
         </member>
-        <member name="M:CYQ.Data.MActionUI.AutoSetColumnValue(System.Boolean)">
+        <member name="M:CYQ.Data.MActionUI.GetAll(System.Boolean)">
             <summary>
             自动设置列的值(true为插入,false为更新)
             </summary>
+        </member>
+        <member name="M:CYQ.Data.MActionUI.AutoGetValue(CYQ.Data.Table.MDataCell)">
+            <summary>
+            对单个值自动取值。
+            </summary>
+            <param name="cell"></param>
         </member>
         <member name="M:CYQ.Data.MActionUI.SetAutoPrefix(System.String,System.String[])">
             <summary>
@@ -1710,6 +1858,9 @@
             一周时间
             </summary>
         </member>
+        <member name="M:CYQ.Data.Xml.XHtmlUrlResolver.ResolveUri(System.Uri,System.String)">
+            assemblyShortName;component/resourceLocation， 例如"/SilverlightLibraryAssembly;component/image.png"。 请注意，需要使用前导斜杠和 component 关键字（后跟一个斜杠）。
+        </member>
         <member name="T:CYQ.Data.Tool.DBTool">
             <summary>
             数据库工具类[都是静态方法]
@@ -1954,6 +2105,21 @@
         <member name="T:CYQ.Data.Extension.IUIValue">
             <summary>
             对于自定义控件，只要继承此接口，即可以使用GetFrom与SetTo方法
+            </summary>
+        </member>
+        <member name="P:CYQ.Data.Extension.IUIValue.MValue">
+            <summary>
+            控件的值
+            </summary>
+        </member>
+        <member name="P:CYQ.Data.Extension.IUIValue.MEnabled">
+            <summary>
+            控件的启用状态
+            </summary>
+        </member>
+        <member name="P:CYQ.Data.Extension.IUIValue.MID">
+            <summary>
+            控件的名称（Name）或ID
             </summary>
         </member>
         <member name="T:CYQ.Data.SQL.SqlValue">
@@ -2263,6 +2429,8 @@
         <member name="P:CYQ.Data.AppConfig.DB.AutoID">
             <summary>
             CYQ.Data.MAction 操作 Oracle 时自增加int类型ID所需要配置的序列ID，Guid为ID则不用。
+            如果需要为每个表都配置一个序列号，可以使用：SEQ_{0} 其中{0}会自动配对成表名，如果没有{0}，则为整个数据库共用一个序列。
+            默认参数值：SEQ_{0}
             </summary>
         </member>
         <member name="P:CYQ.Data.AppConfig.DB.SchemaMapPath">
@@ -2309,7 +2477,7 @@
             实例化：  MProc proc = new MProc(ProcNames.GetList);
             添加参数：proc.Set(GetList.ID, 10);
             获取列表：MDataTable table = proc.ExeMDataTable();
-            关闭链接：proc.Close();
+            关闭链接：proc.Dispose();
             绑定控件：GridView1.DataSource = table;GridView1.DataBind();
             </code></example>
         </member>
@@ -2374,11 +2542,6 @@
             返回首行首列的单个值
             </summary>
         </member>
-        <member name="M:CYQ.Data.MProc.Close">
-            <summary>
-            释放资源,等同于调用Dispose
-            </summary>
-        </member>
         <member name="M:CYQ.Data.MProc.Set(System.Object,System.Object)">
             <summary>
             设置存储过程参数
@@ -2419,6 +2582,12 @@
             设置Aop对象。
             </summary>
         </member>
+        <member name="M:CYQ.Data.MProc.SetTransLevel(System.Data.IsolationLevel)">
+            <summary>
+            设置事务级别
+            </summary>
+            <param name="level">事务级别</param>
+        </member>
         <member name="M:CYQ.Data.MProc.BeginTransation">
             <summary>
             开启事务
@@ -2430,6 +2599,16 @@
             如果需要提前结束事务,可调用此方法
             </summary>
         </member>
+        <member name="M:CYQ.Data.MProc.RollBack">
+            <summary>
+            事务回滚
+            </summary>
+        </member>
+        <member name="M:CYQ.Data.MProc.Dispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
         <member name="P:CYQ.Data.MProc.DebugInfo">
             <summary>
             调试信息[如需要查看所有执行的SQL语句,请设置配置文件OpenDebugInfo项为ture]
@@ -2438,6 +2617,11 @@
         <member name="P:CYQ.Data.MProc.DalType">
             <summary>
             当前操作的数据库类型[Access/Mssql/Oracle/SQLite/MySql等]
+            </summary>
+        </member>
+        <member name="P:CYQ.Data.MProc.ConnectionString">
+            <summary>
+            获取当前数据库链接字符串
             </summary>
         </member>
         <member name="P:CYQ.Data.MProc.TimeOut">
@@ -2453,6 +2637,8 @@
         <member name="P:CYQ.Data.MProc.OutPutValue">
             <summary>
             存储过程的OutPut值
+            单个输出时为值；
+            多个输出时为Dictionary
             </summary>
         </member>
         <member name="T:CYQ.Data.SQL.SqlCompatible">
@@ -2712,10 +2898,29 @@
             <param name="pubDate">发布日期</param>
             <param name="description">内容或摘要</param>
         </member>
+        <member name="M:CYQ.Data.Xml.Rss.LoadData(CYQ.Data.Table.MDataTable)">
+            <summary>
+            加载MDataTable,之后可调用SetMap进行字段映射
+            </summary>
+            <param name="table"></param>
+        </member>
+        <member name="M:CYQ.Data.Xml.Rss.SetMap(CYQ.Data.Xml.RssItemName,System.String,System.Object[])">
+            <summary>
+            设置与MDataTable间的字段映射
+            </summary>
+            <param name="itemName">Rss名称</param>
+            <param name="formatText">格式化，如“{0}.Name”，若无需要格式化，直接赋Null值</param>
+            <param name="tableColumnNames">同DataTable的字段名称</param>
+        </member>
         <member name="P:CYQ.Data.Xml.Rss.Channel">
             <summary>
             RSS 频道（默认）
             </summary>
+        </member>
+        <member name="E:CYQ.Data.Xml.Rss.OnForeach">
+             <summary>
+            LoadData（MDataTable）进行映射后，在格式化每一行数据时触发事件
+             </summary>
         </member>
         <member name="P:CYQ.Data.Xml.Rss.OutXml">
             <summary>
@@ -3108,6 +3313,15 @@
             不包含路径的文件名称(带扩展名)
             </summary>
         </member>
+        <member name="M:CYQ.Data.NoSqlAction.Reset(CYQ.Data.Table.MDataRow@,System.String,System.String,CYQ.Data.DAL.DalType)">
+            <summary>
+            切换表
+            </summary>
+            <param name="row">数据行结构</param>
+            <param name="fileName">文件名称</param>
+            <param name="filePath">文件路径</param>
+            <param name="dalType">数据类型</param>
+        </member>
         <member name="M:CYQ.Data.NoSqlAction.CheckFileChanged(System.Boolean)">
             <summary>
             检测文件是否已被修改过
@@ -3428,7 +3642,7 @@
         </member>
         <member name="M:CYQ.Data.MAction.Delete">
             <summary>
-             删除数据[默认ID必须有值]
+             删除数据[默认主键必须有值]
             </summary>
         </member>
         <member name="M:CYQ.Data.MAction.Delete(System.Object,System.Object[])">
@@ -3487,11 +3701,6 @@
             <param name="where">where条件,可直接传id的值如:[88],或传完整where条件如:[id=88 and name='路过秋天']</param>
             <param name="aopPara">可选的Aop参数</param>
         </member>
-        <member name="M:CYQ.Data.MAction.Close">
-            <summary>
-            释放资源,等同于调用Disponse
-            </summary>
-        </member>
         <member name="M:CYQ.Data.MAction.SetToAll(System.Object,System.Object[])">
             <summary>
             批量对所有控件自动赋值【默认前缀为（txt,ddl,chb）,可通过调用SetAutoPrefix调整】
@@ -3541,14 +3750,14 @@
         </member>
         <member name="M:CYQ.Data.MAction.Bind(System.Object)">
             <summary>
-            绑定DrowDownList等列表控件（默认首列名称必须为“ID”）
+            绑定DrowDownList等列表控件
             </summary>
             <param name="control">（下拉）列表控件</param>
             <returns></returns>
         </member>
         <member name="M:CYQ.Data.MAction.Bind(System.Object,System.String)">
             <summary>
-            绑定DrowDownList等列表控件（默认首列名称必须为“ID”）
+            绑定DrowDownList等列表控件
             </summary>
         </member>
         <member name="M:CYQ.Data.MAction.Bind(System.Object,System.Object,System.Object,System.Object)">
@@ -3585,7 +3794,7 @@
         </member>
         <member name="M:CYQ.Data.MAction.SetExpression(System.String)">
             <summary>
-            更新操作的自定义表达式设置。
+            更新(Update)操作的自定义表达式设置。
             </summary>
             <param name="updateExpression">例如a字段值自加1："a=a+1"</param>
         </member>
@@ -3622,7 +3831,7 @@
         </member>
         <member name="M:CYQ.Data.MAction.SetAutoParentControl(System.Object,System.Object[])">
             <summary>
-            自动获取值父控件设置,可传多个父控件[至少1个]
+            （Win或WPF）自动获取值父控件设置,可传多个父控件[至少1个]
             </summary>
             <param name="parent">第一个父控件名称[必须，可传：this]</param>
             <param name="otherParent">后面N个[可选]</param>
@@ -3639,12 +3848,6 @@
             设置事务级别
             </summary>
             <param name="level"></param>
-        </member>
-        <member name="M:CYQ.Data.MAction.ReOpenTransation">
-            <summary>
-            重新开启事务[在调用EndTransation结束后可重新开启]
-            提示：本方法已过时，请使用:BeginTransation方法
-            </summary>
         </member>
         <member name="M:CYQ.Data.MAction.BeginTransation">
             <summary>
@@ -3667,7 +3870,7 @@
             临时备份Aop，用于切换后的还原。
             </summary>
         </member>
-        <member name="M:CYQ.Data.MAction.SetNoAop">
+        <member name="M:CYQ.Data.MAction.SetAopOff">
             <summary>
             取消Aop，在Aop独立模块使用MAction时必须调用
             </summary>
@@ -3705,7 +3908,7 @@
         </member>
         <member name="P:CYQ.Data.MAction.DebugInfo">
             <summary>
-            调试信息[如需要查看所有执行的SQL语句,请设置配置文件OpenDebugInfo项为ture]
+            调试信息[如需要查看所有执行的SQL语句,请设置AppDebug.OpenDebugInfo或配置文件OpenDebugInfo项为ture]
             </summary>
         </member>
         <member name="P:CYQ.Data.MAction.DalType">
