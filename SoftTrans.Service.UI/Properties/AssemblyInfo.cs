@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // 有关程序集的常规信息通过以下
 // 特性集控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("客服子系统")]
+[assembly: AssemblyTitle("办公自动化")]
 [assembly: AssemblyDescription("警告：本计算机程序受版权法和国际条约保护。如未经授权而擅自复制或传播本程序（或其中任何部分），将受到严厉的民事和刑事制裁，并将在法律许可的最大限度内受到起诉。")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("深圳市软通供应链股份有限公司")]

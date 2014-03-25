@@ -52,7 +52,7 @@ namespace SoftTrans.Service.UI
                 }
             }
 
-            btnSave.Enabled = _OperateType != UI.OperateType.VIEW;
+            btnSave.Enabled = _OperateType != OperateType.VIEW;
         }
 
 

@@ -51,10 +51,65 @@
             this.backgroundWorkerRefreshMenu = new System.ComponentModel.BackgroundWorker();
             this.xtraMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.showDateTimer = new System.Windows.Forms.Timer(this.components);
+            this.barCountry = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.MenuBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BarImgList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraMdiManager)).BeginInit();
             this.SuspendLayout();
+            // 
+            // imgToolBar
+            // 
+            this.imgToolBar.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgToolBar.ImageStream")));
+            this.imgToolBar.Images.SetKeyName(0, "Add.ico");
+            this.imgToolBar.Images.SetKeyName(1, "AddUser.ico");
+            this.imgToolBar.Images.SetKeyName(2, "Cancel.ico");
+            this.imgToolBar.Images.SetKeyName(3, "Categories.ico");
+            this.imgToolBar.Images.SetKeyName(4, "Chart.ico");
+            this.imgToolBar.Images.SetKeyName(5, "Close.ico");
+            this.imgToolBar.Images.SetKeyName(6, "Delete.ico");
+            this.imgToolBar.Images.SetKeyName(7, "Delivery.ico");
+            this.imgToolBar.Images.SetKeyName(8, "Download.ico");
+            this.imgToolBar.Images.SetKeyName(9, "Edit.ico");
+            this.imgToolBar.Images.SetKeyName(10, "Email.ico");
+            this.imgToolBar.Images.SetKeyName(11, "Error.ico");
+            this.imgToolBar.Images.SetKeyName(12, "Exit.ico");
+            this.imgToolBar.Images.SetKeyName(13, "Expand.ico");
+            this.imgToolBar.Images.SetKeyName(14, "ExportExcel.ico");
+            this.imgToolBar.Images.SetKeyName(15, "ExportPDF.ico");
+            this.imgToolBar.Images.SetKeyName(16, "Female.ico");
+            this.imgToolBar.Images.SetKeyName(17, "First.ico");
+            this.imgToolBar.Images.SetKeyName(18, "Flag.ico");
+            this.imgToolBar.Images.SetKeyName(19, "Folder.ico");
+            this.imgToolBar.Images.SetKeyName(20, "Help.ico");
+            this.imgToolBar.Images.SetKeyName(21, "ImportFromExcel.ico");
+            this.imgToolBar.Images.SetKeyName(22, "InStorage.ico");
+            this.imgToolBar.Images.SetKeyName(23, "Last.ico");
+            this.imgToolBar.Images.SetKeyName(24, "Lock.ico");
+            this.imgToolBar.Images.SetKeyName(25, "Male.ico");
+            this.imgToolBar.Images.SetKeyName(26, "Message.ico");
+            this.imgToolBar.Images.SetKeyName(27, "Network.ico");
+            this.imgToolBar.Images.SetKeyName(28, "Next.ico");
+            this.imgToolBar.Images.SetKeyName(29, "OK.ico");
+            this.imgToolBar.Images.SetKeyName(30, "OutStorage.ico");
+            this.imgToolBar.Images.SetKeyName(31, "Previous.ico");
+            this.imgToolBar.Images.SetKeyName(32, "Print.ico");
+            this.imgToolBar.Images.SetKeyName(33, "Prohibit.ico");
+            this.imgToolBar.Images.SetKeyName(34, "Refresh.ico");
+            this.imgToolBar.Images.SetKeyName(35, "Report.ico");
+            this.imgToolBar.Images.SetKeyName(36, "Return.ico");
+            this.imgToolBar.Images.SetKeyName(37, "Save.ico");
+            this.imgToolBar.Images.SetKeyName(38, "SaveGrid.ico");
+            this.imgToolBar.Images.SetKeyName(39, "Search.ico");
+            this.imgToolBar.Images.SetKeyName(40, "Setting.ico");
+            this.imgToolBar.Images.SetKeyName(41, "Shrink.ico");
+            this.imgToolBar.Images.SetKeyName(42, "Statistical.ico");
+            this.imgToolBar.Images.SetKeyName(43, "Suspend.ico");
+            this.imgToolBar.Images.SetKeyName(44, "Tag.ico");
+            this.imgToolBar.Images.SetKeyName(45, "Unlock.ico");
+            this.imgToolBar.Images.SetKeyName(46, "VehicleKind.ico");
+            this.imgToolBar.Images.SetKeyName(47, "View.ico");
+            this.imgToolBar.Images.SetKeyName(48, "Warning.ico");
+            this.imgToolBar.Images.SetKeyName(49, "ZoomIn.ico");
             // 
             // MenuBar
             // 
@@ -76,9 +131,10 @@
             this.barLoadBaseData,
             this.barBase,
             this.barBaseRate,
-            this.barSettings});
+            this.barSettings,
+            this.barCountry});
             this.MenuBar.MainMenu = this.MainMenu;
-            this.MenuBar.MaxItemId = 14;
+            this.MenuBar.MaxItemId = 15;
             this.MenuBar.StatusBar = this.MainStatuBar;
             this.MenuBar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MenuBar_ItemClick);
             // 
@@ -122,7 +178,8 @@
             this.barBase.Caption = "基础档案(&B)";
             this.barBase.Id = 11;
             this.barBase.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barBaseRate)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barBaseRate),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barCountry)});
             this.barBase.Name = "barBase";
             // 
             // barBaseRate
@@ -225,6 +282,12 @@
             this.showDateTimer.Interval = 1000;
             this.showDateTimer.Tick += new System.EventHandler(this.showDateTimer_Tick);
             // 
+            // barCountry
+            // 
+            this.barCountry.Caption = "国家设置";
+            this.barCountry.Id = 14;
+            this.barCountry.Name = "barCountry";
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -268,5 +331,6 @@
         private DevExpress.XtraBars.BarSubItem barBase;
         private DevExpress.XtraBars.BarButtonItem barBaseRate;
         private DevExpress.XtraBars.BarButtonItem barSettings;
+        private DevExpress.XtraBars.BarButtonItem barCountry;
     }
 }

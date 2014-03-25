@@ -143,7 +143,7 @@ namespace SoftTrans.Service.Controls
             txtPageSize.Text = PageSize.ToString();
             txtPageNum.Properties.MaxValue = pageCount;
             txtPageNum.EditValue = pageIndex;
-            lblPageInfo.Text = string.Format("共 {0} 条记录，共 {1} 页，当前 {2} 页", recordCount.ToString(), PageCount.ToString(), PageIndex.ToString());
+            lblPageInfo.Text = string.Format("当前第 {0} 页，共 {1} 页，共 {1} 条记录", PageIndex, PageCount, recordCount);
 
             if (callEvent && OnPageChanged != null)
             {
@@ -240,6 +240,7 @@ namespace SoftTrans.Service.Controls
         }
 
         #endregion
+
         bool isTextChanged = false;
         /// <summary>
         /// 分页属性改变了。

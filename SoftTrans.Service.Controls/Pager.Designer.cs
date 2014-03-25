@@ -87,7 +87,7 @@
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(52, 20);
             this.btnGo.TabIndex = 4;
-            this.btnGo.Text = "跳转";
+            this.btnGo.Text = "Go";
             this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
             // 
             // labelControl1
@@ -115,7 +115,7 @@
             this.lblPageInfo.Name = "lblPageInfo";
             this.lblPageInfo.Size = new System.Drawing.Size(177, 14);
             this.lblPageInfo.TabIndex = 10;
-            this.lblPageInfo.Text = "共 0 条记录，共 0 页，当前 0 页";
+            this.lblPageInfo.Text = "当前 0 页，共 0 页，共 0 条记录";
             // 
             // btnNext
             // 

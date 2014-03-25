@@ -72,7 +72,6 @@
     </Compile>
     <Compile Include="UI\GridViewHelper.cs" />
     <Compile Include="UI\MessageTips.cs" />
-    <Compile Include="UI\OperateType.cs" />
     <Compile Include="Utils\JsonManager.cs" />
     <Compile Include="Others\AppConfig.cs" />
     <Compile Include="Others\AsposeExcelTools.cs" />
