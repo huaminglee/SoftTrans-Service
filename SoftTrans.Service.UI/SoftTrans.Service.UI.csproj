@@ -73,11 +73,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlertMessage.cs" />
-    <Compile Include="Frm_HrmCountry.cs">
+    <Compile Include="BaseFile\Frm_HrmCountry.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_HrmCountry.Designer.cs">
+    <Compile Include="BaseFile\Frm_HrmCountry.Designer.cs">
       <DependentUpon>Frm_HrmCountry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseFile\Frm_HrmProvince.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseFile\Frm_HrmProvince.Designer.cs">
+      <DependentUpon>Frm_HrmProvince.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_HrmCity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_HrmCity.Designer.cs">
+      <DependentUpon>Frm_HrmCity.cs</DependentUpon>
     </Compile>
     <Compile Include="Init\AssemblyManager.cs" />
     <Compile Include="Loading.cs">
@@ -162,8 +174,14 @@
     <Compile Include="SetDispalyColumns.Designer.cs">
       <DependentUpon>SetDispalyColumns.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Frm_HrmCountry.resx">
+    <EmbeddedResource Include="BaseFile\Frm_HrmCountry.resx">
       <DependentUpon>Frm_HrmCountry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseFile\Frm_HrmProvince.resx">
+      <DependentUpon>Frm_HrmProvince.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_HrmCity.resx">
+      <DependentUpon>Frm_HrmCity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Init\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
@@ -207,7 +225,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\SoftTrans.Service.Entity.Hrm_City.datasource" />
     <None Include="Properties\DataSources\SoftTrans.Service.Entity.Hrm_Country.datasource" />
+    <None Include="Properties\DataSources\SoftTrans.Service.Entity.Hrm_Province.datasource" />
     <None Include="Properties\DataSources\SoftTrans.Service.Entity.T_baseBalanceExchange_Rate.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -316,9 +336,7 @@
     <None Include="Service References\BaseFileService\configuration91.svcinfo" />
     <None Include="Service References\BaseFileService\BaseFileService.disco" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BaseFile\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

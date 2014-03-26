@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_HrmCountry));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.gridCountry = new DevExpress.XtraGrid.GridControl();
@@ -157,9 +157,9 @@
             // 
             this.gridCountry.DataSource = this.bdsCountry;
             this.gridCountry.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode2.RelationName = "Level1";
+            gridLevelNode1.RelationName = "Level1";
             this.gridCountry.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.gridCountry.Location = new System.Drawing.Point(2, 22);
             this.gridCountry.MainView = this.gvCountry;
             this.gridCountry.Name = "gridCountry";
@@ -437,6 +437,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_HrmCountry";
             this.Text = "国家设置";
+            this.Load += new System.EventHandler(this.Frm_HrmCountry_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);

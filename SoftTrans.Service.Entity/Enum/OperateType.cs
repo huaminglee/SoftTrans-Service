@@ -31,11 +31,13 @@ namespace SoftTrans.Service.Entity.Enum
         /// 反审批
         /// </summary>
         UNAUDIT,
-        CHECK,
-        UNCHECK,
         /// <summary>
         /// 复制
         /// </summary>
-        COPY
+        COPY,
+        /// <summary>
+        /// 初始
+        /// </summary>
+        DEFAULT
     }
 }

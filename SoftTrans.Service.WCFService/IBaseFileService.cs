@@ -40,5 +40,30 @@ namespace SoftTrans.Service.WCFService
         string LoadPage_Hrm_Country(int pageIndex, int pageSize, object where, out int rowCount, params object[] aopPara);
 
 
+
+        [OperationContract(Name = "Insert_Hrm_Province")]
+        Hrm_Province Insert_Hrm_Province(Hrm_Province entity);
+        [OperationContract(Name = "Update_Hrm_Province")]
+        bool Update_Hrm_Province(Hrm_Province entity);
+        [OperationContract(Name = "Delete_Hrm_Province")]
+        bool Delete_Hrm_Province(object keyId);
+        [OperationContract(Name = "Load_Hrm_Province")]
+        string Load_Hrm_Province(object where);
+        [OperationContract(Name = "LoadPage_Hrm_Province")]
+        string LoadPage_Hrm_Province(int pageIndex, int pageSize, object where, out int rowCount, params object[] aopPara);
+
+
+
+        [OperationContract(Name = "Insert_Hrm_City")]
+        Hrm_City Insert_Hrm_City(Hrm_City entity);
+        [OperationContract(Name = "Update_Hrm_City")]
+        bool Update_Hrm_City(Hrm_City entity);
+        [OperationContract(Name = "Delete_Hrm_City")]
+        bool Delete_Hrm_City(object keyId);
+        [OperationContract(Name = "Load_Hrm_City")]
+        string Load_Hrm_City(object where);
+        [OperationContract(Name = "LoadPage_Hrm_City")]
+        string LoadPage_Hrm_City(int pageIndex, int pageSize, object where, out int rowCount, params object[] aopPara);
+
     }
 }

@@ -23,6 +23,11 @@ namespace SoftTrans.Service.DAL
         {
             get { return new ProvinceRepository(); }
         }
+
+        public static ICityRepository CityRepository
+        {
+            get { return new CityRepository(); }
+        }
         #endregion
     }
 }

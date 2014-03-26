@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
-using SoftTrans.Service.Common.UI;
+﻿using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using DevExpress.XtraSplashScreen;
+using SoftTrans.Service.Common.UI;
+using SoftTrans.Service.Entity;
 using SoftTrans.Service.Entity.Enum;
 using SoftTrans.Service.UI.Proxy;
-using SoftTrans.Service.Entity;
-using DevExpress.XtraBars.Docking;
-using DevExpress.XtraGrid.Views.Grid.ViewInfo;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace SoftTrans.Service.UI
 {
@@ -31,7 +26,7 @@ namespace SoftTrans.Service.UI
         /// <summary>
         /// 当前操作类型
         /// </summary>
-        private OperateType mOperateType = OperateType.VIEW;
+        private OperateType mOperateType = OperateType.DEFAULT;
         #endregion
 
         #region 构造函数
@@ -45,7 +40,6 @@ namespace SoftTrans.Service.UI
             mActiveDataSource = new List<Hrm_Country>();
             this.bdsCountry.DataSource = mActiveDataSource;
             GridViewHelper.SetViewRowNumber(gvCountry);
-            SetButtonEnable();
         }
         #endregion
 
@@ -73,6 +67,14 @@ namespace SoftTrans.Service.UI
             pagerCountry.DrawControl(Convert.ToInt32(e.Result));
             bdsCountry.DataSource = mActiveDataSource;
             SplashScreenManager.CloseForm();
+            SetFormState();
+        }
+        #endregion
+        #region 窗体加载事件
+        private void Frm_HrmCountry_Load(object sender, EventArgs e)
+        {
+            TabChanged();
+            SetFormState();
         }
         #endregion
         #region 查询事件
@@ -112,14 +114,14 @@ namespace SoftTrans.Service.UI
             mOperateType = OperateType.ADD;
             bdsCountry.AddNew();
             (bdsCountry.Current as Hrm_Country).ID = -1;
-            SetButtonEnable();
+            SetFormState();
         }
         #endregion
         #region 修改事件
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             mOperateType = OperateType.UPDATE;
-            SetButtonEnable();
+            SetFormState();
         }
         #endregion
         #region 删除事件
@@ -147,22 +149,32 @@ namespace SoftTrans.Service.UI
         #region 保存事件
         private void btnSave_Click(object sender, EventArgs e)
         {
-
-
-            bdsCountry.EndEdit();
-
-            switch (mOperateType)
+            try
             {
-                case OperateType.ADD:
-                    SaveAdd();
-                    break;
-                case OperateType.UPDATE:
-                    SaveUpdate();
-                    break;
-            }
+                Cursor.Current = Cursors.WaitCursor;
+                bdsCountry.EndEdit();
 
-            mOperateType = OperateType.VIEW;
-            SetButtonEnable();
+                switch (mOperateType)
+                {
+                    case OperateType.ADD:
+                        SaveAdd();
+                        break;
+                    case OperateType.UPDATE:
+                        SaveUpdate();
+                        break;
+                }
+
+                mOperateType = OperateType.VIEW;
+                SetFormState();
+            }
+            catch (Exception ex)
+            {
+                FrmErrorHandle.ErrorLogShow(ex);
+            }
+            finally
+            {
+                Cursor.Current = Cursors.WaitCursor;
+            }
 
         }
 
@@ -170,9 +182,9 @@ namespace SoftTrans.Service.UI
         #region 取消事件
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            mOperateType = OperateType.VIEW;
+            mOperateType = OperateType.DEFAULT;
             bdsCountry.CancelEdit();
-            SetButtonEnable();
+            SetFormState();
         }
         #endregion
         #region 关闭事件
@@ -194,7 +206,7 @@ namespace SoftTrans.Service.UI
         /// <summary>
         /// 设置编辑控件可用性
         /// </summary>
-        private void SetEditControlEnable(bool canDo)
+        private void SetControlReadOnly(bool canDo)
         {
             gridCountry.Enabled = canDo;
             txtCountryName.Properties.ReadOnly = canDo;
@@ -221,41 +233,52 @@ namespace SoftTrans.Service.UI
         /// <summary>
         /// 设置操作按钮可用状态
         /// </summary>
-        private void SetButtonEnable()
+        private void SetFormState()
         {
+            bool readOnly = false;
+
             switch (mOperateType)
             {
                 case OperateType.ADD:
                     btnAdd.Enabled = false;
                     btnUpdate.Enabled = false;
                     btnDelete.Enabled = false;
-
                     btnSave.Enabled = true;
                     btnCancel.Enabled = true;
-
-                    SetEditControlEnable(false);
+                    readOnly = false;
                     break;
                 case OperateType.UPDATE:
                     btnAdd.Enabled = false;
                     btnUpdate.Enabled = false;
                     btnDelete.Enabled = false;
-
                     btnSave.Enabled = true;
                     btnCancel.Enabled = true;
-
-                    SetEditControlEnable(false);
+                    readOnly = false;
                     break;
                 case OperateType.VIEW:
                     btnAdd.Enabled = true;
                     btnUpdate.Enabled = true;
                     btnDelete.Enabled = true;
-
                     btnSave.Enabled = false;
                     btnCancel.Enabled = false;
-
-                    SetEditControlEnable(true);
+                    readOnly = true;
+                    break;
+                default:
+                    btnAdd.Enabled = true;
+                    btnCancel.Enabled = false;
+                    btnDelete.Enabled = true;
+                    btnUpdate.Enabled = true;
+                    btnSave.Enabled = false;
+                    if (bdsCountry.Current == null)
+                    {
+                        btnUpdate.Enabled = false;
+                        btnDelete.Enabled = false;
+                    }
+                    readOnly = true;
                     break;
             }
+            SetControlReadOnly(readOnly);
+
         }
         /// <summary>
         /// 新增保存
@@ -285,5 +308,7 @@ namespace SoftTrans.Service.UI
             MessageTips.ShowTips("修改成功.");
         }
         #endregion
+
+
     }
 }

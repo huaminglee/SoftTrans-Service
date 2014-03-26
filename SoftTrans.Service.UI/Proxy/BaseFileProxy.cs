@@ -77,5 +77,64 @@ namespace SoftTrans.Service.UI.Proxy
             return Newtonsoft.Json.JsonConvert.DeserializeObject<List<Entity.Hrm_Country>>(obj);
         }
         #endregion
+
+        #region 省份设置
+        public Entity.Hrm_Province Insert_Hrm_Province(Entity.Hrm_Province entity)
+        {
+            return Channel.Insert_Hrm_Province(entity);
+        }
+
+        public bool Update_Hrm_Province(Entity.Hrm_Province entity)
+        {
+            return Channel.Update_Hrm_Province(entity);
+        }
+
+        public bool Delete_Hrm_Province(object keyId)
+        {
+            return Channel.Delete_Hrm_Province(keyId);
+        }
+
+        public List<Entity.Hrm_Province> Load_Hrm_Province(object where)
+        {
+            var obj = Channel.Load_Hrm_Province(where);
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<Entity.Hrm_Province>>(obj);
+        }
+
+        public List<Entity.Hrm_Province> LoadPage_Hrm_Province(out int rowCount, int pageIndex, int pageSize, object where, params object[] aopPara)
+        {
+            var obj = Channel.LoadPage_Hrm_Province(out rowCount, pageIndex, pageSize, where, aopPara);
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<Entity.Hrm_Province>>(obj);
+        }
+        #endregion
+
+
+        #region 城市设置
+        public Entity.Hrm_City Insert_Hrm_City(Entity.Hrm_City entity)
+        {
+            return Channel.Insert_Hrm_City(entity);
+        }
+
+        public bool Update_Hrm_City(Entity.Hrm_City entity)
+        {
+            return Channel.Update_Hrm_City(entity);
+        }
+
+        public bool Delete_Hrm_City(object keyId)
+        {
+            return Channel.Delete_Hrm_City(keyId);
+        }
+
+        public List<Entity.Hrm_City> Load_Hrm_City(object where)
+        {
+            var obj = Channel.Load_Hrm_City(where);
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<Entity.Hrm_City>>(obj);
+        }
+
+        public List<Entity.Hrm_City> LoadPage_Hrm_City(out int rowCount, int pageIndex, int pageSize, object where, params object[] aopPara)
+        {
+            var obj = Channel.LoadPage_Hrm_City(out rowCount, pageIndex, pageSize, where, aopPara);
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<Entity.Hrm_City>>(obj);
+        }
+        #endregion
     }
 }

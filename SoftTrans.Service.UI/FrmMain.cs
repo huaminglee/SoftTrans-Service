@@ -72,14 +72,14 @@ namespace SoftTrans.Service.UI
         {
             switch (e.Item.Name)
             {
-                case "barLoadBaseData":
-                    // new BaseDataList().ShowDialog();
-                    break;
                 case "barBaseRate":
                     ShowForm(typeof(Frm_baseBalanceExchange_Rate), "汇率档案");
                     break;
                 case "barCountry":
                     ShowForm(typeof(Frm_HrmCountry), "国家设置");
+                    break;
+                case "barProvince":
+                    ShowForm(typeof(Frm_HrmProvince), "省份设置");
                     break;
                 case "barSettings":
                     new Settings().ShowDialog();

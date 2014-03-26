@@ -22,4 +22,22 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Hrm_Country" nillable="true" type="tns:Hrm_Country" />
+  <xs:complexType name="Hrm_Province">
+    <xs:sequence>
+      <xs:element name="_x003C_CountryId_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_ID_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_ProvinceDesc_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_ProvinceName_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Hrm_Province" nillable="true" type="tns:Hrm_Province" />
+  <xs:complexType name="Hrm_City">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CountryId" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ProvinceId" type="xs:int" />
+      <xs:element minOccurs="0" name="cityname" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Hrm_City" nillable="true" type="tns:Hrm_City" />
 </xs:schema>

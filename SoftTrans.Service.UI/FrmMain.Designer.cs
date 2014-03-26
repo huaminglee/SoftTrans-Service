@@ -37,6 +37,7 @@
             this.barLoadBaseData = new DevExpress.XtraBars.BarButtonItem();
             this.barBase = new DevExpress.XtraBars.BarSubItem();
             this.barBaseRate = new DevExpress.XtraBars.BarButtonItem();
+            this.barCountry = new DevExpress.XtraBars.BarButtonItem();
             this.MainStatuBar = new DevExpress.XtraBars.Bar();
             this.barUser = new DevExpress.XtraBars.BarStaticItem();
             this.barCompany = new DevExpress.XtraBars.BarStaticItem();
@@ -51,7 +52,7 @@
             this.backgroundWorkerRefreshMenu = new System.ComponentModel.BackgroundWorker();
             this.xtraMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.showDateTimer = new System.Windows.Forms.Timer(this.components);
-            this.barCountry = new DevExpress.XtraBars.BarButtonItem();
+            this.barProvince = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.MenuBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BarImgList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraMdiManager)).BeginInit();
@@ -132,9 +133,10 @@
             this.barBase,
             this.barBaseRate,
             this.barSettings,
-            this.barCountry});
+            this.barCountry,
+            this.barProvince});
             this.MenuBar.MainMenu = this.MainMenu;
-            this.MenuBar.MaxItemId = 15;
+            this.MenuBar.MaxItemId = 16;
             this.MenuBar.StatusBar = this.MainStatuBar;
             this.MenuBar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.MenuBar_ItemClick);
             // 
@@ -179,7 +181,8 @@
             this.barBase.Id = 11;
             this.barBase.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barBaseRate),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barCountry)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barCountry),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barProvince)});
             this.barBase.Name = "barBase";
             // 
             // barBaseRate
@@ -187,6 +190,12 @@
             this.barBaseRate.Caption = "汇率档案";
             this.barBaseRate.Id = 12;
             this.barBaseRate.Name = "barBaseRate";
+            // 
+            // barCountry
+            // 
+            this.barCountry.Caption = "国家设置";
+            this.barCountry.Id = 14;
+            this.barCountry.Name = "barCountry";
             // 
             // MainStatuBar
             // 
@@ -282,11 +291,11 @@
             this.showDateTimer.Interval = 1000;
             this.showDateTimer.Tick += new System.EventHandler(this.showDateTimer_Tick);
             // 
-            // barCountry
+            // barProvince
             // 
-            this.barCountry.Caption = "国家设置";
-            this.barCountry.Id = 14;
-            this.barCountry.Name = "barCountry";
+            this.barProvince.Caption = "省份设置";
+            this.barProvince.Id = 15;
+            this.barProvince.Name = "barProvince";
             // 
             // FrmMain
             // 
@@ -332,5 +341,6 @@
         private DevExpress.XtraBars.BarButtonItem barBaseRate;
         private DevExpress.XtraBars.BarButtonItem barSettings;
         private DevExpress.XtraBars.BarButtonItem barCountry;
+        private DevExpress.XtraBars.BarButtonItem barProvince;
     }
 }

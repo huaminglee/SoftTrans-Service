@@ -73,5 +73,65 @@ namespace SoftTrans.Service.WCFService
             return Newtonsoft.Json.JsonConvert.SerializeObject(obj);
         }
         #endregion
+
+
+        #region 省份设置
+        public Entity.Hrm_Province Insert_Hrm_Province(Entity.Hrm_Province entity)
+        {
+            return RepositoryFactory.ProvinceRepository.Insert(entity);
+        }
+
+        public bool Update_Hrm_Province(Entity.Hrm_Province entity)
+        {
+            return RepositoryFactory.ProvinceRepository.Update(entity);
+        }
+
+        public bool Delete_Hrm_Province(object keyId)
+        {
+            return RepositoryFactory.ProvinceRepository.Delete(keyId);
+        }
+
+        public string Load_Hrm_Province(object where)
+        {
+            var obj = RepositoryFactory.ProvinceRepository.LoadEntities(where);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(obj);
+        }
+
+        public string LoadPage_Hrm_Province(int pageIndex, int pageSize, object where, out int rowCount, params object[] aopPara)
+        {
+            var obj = RepositoryFactory.ProvinceRepository.LoadPageEntities(pageIndex, pageSize, where, out rowCount, aopPara);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(obj);
+        }
+        #endregion
+
+
+        #region 城市设置
+        public Entity.Hrm_City Insert_Hrm_City(Entity.Hrm_City entity)
+        {
+            return RepositoryFactory.CityRepository.Insert(entity);
+        }
+
+        public bool Update_Hrm_City(Entity.Hrm_City entity)
+        {
+            return RepositoryFactory.CityRepository.Update(entity);
+        }
+
+        public bool Delete_Hrm_City(object keyId)
+        {
+            return RepositoryFactory.CityRepository.Delete(keyId);
+        }
+
+        public string Load_Hrm_City(object where)
+        {
+            var obj = RepositoryFactory.CityRepository.LoadEntities(where);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(obj);
+        }
+
+        public string LoadPage_Hrm_City(int pageIndex, int pageSize, object where, out int rowCount, params object[] aopPara)
+        {
+            var obj = RepositoryFactory.CityRepository.LoadPageEntities(pageIndex, pageSize, where, out rowCount, aopPara);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(obj);
+        }
+        #endregion
     }
 }
